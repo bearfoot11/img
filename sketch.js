@@ -1,4 +1,6 @@
 let img;
+let a = 0.01;
+
 function preload() {
   img = loadImage('https://raw.githubusercontent.com/bearfoot11/img/main/bird.jpg');
 }
@@ -8,15 +10,21 @@ function setup() {
 }
 
 function draw() {
-  //background(255);
-  rotateZ(frameCount * 0.01);
-  rotateX(frameCount * 0.01);
-  rotateY(frameCount * 0.01);
+  background(255);
+  
+  
+  rotateX(frameCount * a);
+  rotateY(frameCount * a);
+  rotateZ(frameCount * a);
+  
+  //rotateX(mouseY * a);
+  //rotateY(mouseX * a);
+  
   texture(img);
-  box(width / 2);
+  
+  box(img.width / 2);
+  a = a + 0.00001;
 }
-
-
 
 
 
